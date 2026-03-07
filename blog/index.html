@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog IAtoca — Inteligencia Artificial para PYMEs y Empresas</title>
+    <meta name="description" content="Blog sobre Inteligencia Artificial aplicada a empresas y PYMEs. Guías prácticas, herramientas IA y estrategias para automatizar y optimizar tu negocio.">
+    <meta name="keywords" content="blog inteligencia artificial empresas, ia para pymes, automatización procesos ia, herramientas ia empresas">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.iatoca.com/blog/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Blog IAtoca — IA para Empresas">
+    <meta property="og:description" content="Guías prácticas, herramientas y estrategias de Inteligencia Artificial para PYMEs.">
+    <meta property="og:url" content="https://www.iatoca.com/blog/">
+    <meta property="og:site_name" content="IAtoca">
+    <meta property="og:locale" content="es_ES">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6C3CE1;
+            --primary-light: #8B5CF6;
+            --accent: #00D4AA;
+            --dark: #0F0F1A;
+            --dark-2: #1A1A2E;
+            --dark-3: #25253D;
+            --gray-1: #8888A0;
+            --gray-2: #B0B0C8;
+            --white: #FFFFFF;
+            --off-white: #F0F0F8;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--dark);
+            color: var(--white);
+            line-height: 1.6;
+        }
+        nav {
+            position: fixed; top: 0; left: 0; right: 0;
+            background: rgba(15, 15, 26, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            display: flex; justify-content: space-between; align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .logo a { text-decoration: none; }
+        .logo span:first-child { color: var(--accent); font-weight: 800; font-size: 1.5rem; }
+        .logo span:last-child { color: var(--white); font-weight: 300; font-size: 1.5rem; }
+        .nav-links a {
+            color: var(--gray-2); text-decoration: none; margin-left: 2rem;
+            font-size: 0.9rem; transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--accent); }
+        .blog-hero {
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .blog-hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        .blog-hero h1 .highlight { color: var(--accent); }
+        .blog-hero p {
+            color: var(--gray-2);
+            font-size: 1.1rem;
+        }
+        .blog-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .blog-card {
+            background: var(--dark-2);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .blog-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+        }
+        .blog-card a { text-decoration: none; color: inherit; }
+        .blog-card .tag {
+            display: inline-block;
+            background: rgba(108, 60, 225, 0.2);
+            color: var(--primary-light);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.8rem;
+        }
+        .blog-card h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+            line-height: 1.3;
+        }
+        .blog-card p {
+            color: var(--gray-2);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+        .blog-card .meta {
+            color: var(--gray-1);
+            font-size: 0.8rem;
+        }
+        .read-more {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            margin-top: 4rem;
+        }
+        footer .logo span:first-child { color: var(--accent); font-weight: 800; font-size: 1.3rem; }
+        footer .logo span:last-child { color: var(--white); font-weight: 300; font-size: 1.3rem; }
+        footer p { color: var(--gray-1); font-size: 0.85rem; }
+        @media (max-width: 768px) {
+            .blog-hero h1 { font-size: 1.8rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo"><a href="/"><span>IA</span><span>toca</span></a></div>
+        <div class="nav-links">
+            <a href="/">Inicio</a>
+            <a href="/#servicios">Servicios</a>
+            <a href="/blog/">Blog</a>
+            <a href="/#contacto">Contacto</a>
+        </div>
+    </nav>
+
+    <div class="blog-hero">
+        <h1>Blog <span class="highlight">IAtoca</span></h1>
+        <p>Guías prácticas, herramientas y estrategias de Inteligencia Artificial para que tu empresa dé el salto.</p>
+    </div>
+
+    <div class="blog-grid">
+        <div class="blog-card">
+            <a href="/blog/como-implementar-ia-en-pyme-paso-a-paso">
+                <span class="tag">Guía práctica</span>
+                <h2>Cómo implementar IA en una PYME paso a paso</h2>
+                <p>Una guía completa con los 5 pasos que cualquier empresa pequeña puede seguir para empezar a usar Inteligencia Artificial sin grandes inversiones ni conocimientos técnicos.</p>
+                <div class="meta">7 marzo 2026 · 8 min de lectura</div>
+                <span class="read-more">Leer artículo →</span>
+            </a>
+        </div>
+        <div class="blog-card">
+            <a href="/blog/que-es-inteligencia-artificial-para-empresas">
+                <span class="tag">Fundamentos</span>
+                <h2>Qué es la Inteligencia Artificial para empresas (explicado sin tecnicismos)</h2>
+                <p>Desmitificamos la IA empresarial: qué es realmente, qué puede hacer por tu negocio y por qué las PYMEs españolas no pueden quedarse atrás.</p>
+                <div class="meta">7 marzo 2026 · 7 min de lectura</div>
+                <span class="read-more">Leer artículo →</span>
+            </a>
+        </div>
+        <div class="blog-card">
+            <a href="/blog/herramientas-ia-para-empresas-2026">
+                <span class="tag">Herramientas</span>
+                <h2>Las 7 mejores herramientas de IA para empresas pequeñas en 2026</h2>
+                <p>Selección curada de herramientas de Inteligencia Artificial accesibles, prácticas y con ROI inmediato para PYMEs que quieren empezar ya.</p>
+                <div class="meta">7 marzo 2026 · 9 min de lectura</div>
+                <span class="read-more">Leer artículo →</span>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="logo"><span>IA</span><span>toca</span></div>
+        <p style="margin-top: 0.8rem;">© 2026 IAtoca. Impulsa tu negocio con Inteligencia Artificial.</p>
+    </footer>
+</body>
+</html>

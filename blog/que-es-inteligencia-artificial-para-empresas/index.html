@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qué es la Inteligencia Artificial para empresas (explicado sin tecnicismos)</title>
+    <meta name="description" content="Guía completa sobre inteligencia artificial para PYMEs españolas. Descubre qué es la IA, tipos reales de aplicaciones empresariales y ejemplos prácticos sin tecnicismos.">
+    <meta name="keywords" content="inteligencia artificial empresas, IA para pymes, qué es inteligencia artificial, IA negocios, chatbots empresariales, automatización IA">
+    <meta name="author" content="IAtoca">
+    <meta name="publication_date" content="2026-03-07">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://iatoca.com/blog/que-es-inteligencia-artificial-para-empresas/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Qué es la Inteligencia Artificial para empresas (explicado sin tecnicismos)">
+    <meta property="og:description" content="Guía completa sobre inteligencia artificial para PYMEs españolas. Descubre qué es la IA, tipos reales de aplicaciones empresariales y ejemplos prácticos sin tecnicismos.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://iatoca.com/blog/que-es-inteligencia-artificial-para-empresas/">
+    <meta property="og:image" content="https://iatoca.com/og-image-ia-empresas.jpg">
+    <meta property="article:published_time" content="2026-03-07">
+    <meta property="article:author" content="IAtoca">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Qué es la Inteligencia Artificial para empresas (explicado sin tecnicismos)">
+    <meta name="twitter:description" content="Guía completa sobre inteligencia artificial para PYMEs españolas. Descubre qué es la IA, tipos reales de aplicaciones empresariales y ejemplos prácticos.">
+    <meta name="twitter:image" content="https://iatoca.com/og-image-ia-empresas.jpg">
+
+    <!-- Schema.org Article -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Qué es la Inteligencia Artificial para empresas (explicado sin tecnicismos)",
+        "description": "Guía completa sobre inteligencia artificial para PYMEs españolas. Descubre qué es la IA, tipos reales de aplicaciones empresariales y ejemplos prácticos sin tecnicismos.",
+        "image": "https://iatoca.com/og-image-ia-empresas.jpg",
+        "datePublished": "2026-03-07",
+        "author": {
+            "@type": "Organization",
+            "name": "IAtoca",
+            "url": "https://iatoca.com"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "IAtoca",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://iatoca.com/logo.png"
+            }
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://iatoca.com/blog/que-es-inteligencia-artificial-para-empresas/"
+        }
+    }
+    </script>
+
+    <style>
+        :root {
+            --primary: #6C3CE1;
+            --accent: #00D4AA;
+            --dark: #0F0F1A;
+            --dark-2: #1A1A2E;
+            --gray-1: #8888A0;
+            --gray-2: #B0B0C8;
+            --white: #FFFFFF;
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--dark);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--dark-2);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-ia {
+            color: var(--accent);
+        }
+
+        .logo-toca {
+            color: var(--white);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Header */
+        .article-header {
+            background: linear-gradient(135deg, var(--dark-2) 0%, rgba(108, 60, 225, 0.1) 100%);
+            padding: 4rem 2rem;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-content {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .article-category {
+            display: inline-block;
+            background-color: rgba(108, 60, 225, 0.2);
+            color: var(--accent);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .article-meta {
+            display: flex;
+            gap: 2rem;
+            color: var(--gray-2);
+            font-size: 0.95rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Article Content */
+        .article-container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+
+        article {
+            color: var(--white);
+        }
+
+        article p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--gray-2);
+        }
+
+        article h2 {
+            font-size: 1.8rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+            border-left: 3px solid var(--accent);
+            padding-left: 1rem;
+        }
+
+        article h3 {
+            font-size: 1.3rem;
+            margin-top: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        article ul, article ol {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+
+        article li {
+            margin-bottom: 0.8rem;
+            color: var(--gray-2);
+            line-height: 1.8;
+        }
+
+        article strong {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .highlight {
+            background-color: rgba(108, 60, 225, 0.15);
+            border-left: 3px solid var(--accent);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .highlight p {
+            margin-bottom: 0;
+            color: var(--white);
+        }
+
+        /* Internal Links */
+        article a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        article a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            max-width: 720px;
+            margin: 4rem auto 0;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, rgba(108, 60, 225, 0.15) 0%, rgba(0, 212, 170, 0.05) 100%);
+            border: 1px solid rgba(108, 60, 225, 0.3);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .cta-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            margin-top: 0;
+        }
+
+        .cta-section p {
+            margin-bottom: 1.5rem;
+            color: var(--gray-2);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--dark);
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 212, 170, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-2);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: var(--white);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: var(--gray-2);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            display: block;
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--gray-1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            article h2 {
+                font-size: 1.4rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .article-container {
+                padding: 0 1.5rem 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <span class="logo-ia">IA</span><span class="logo-toca">toca</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/#servicios">Servicios</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/#contacto">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <div class="article-header">
+        <div class="header-content">
+            <span class="article-category">Guía Completa</span>
+            <h1>Qué es la Inteligencia Artificial para empresas (explicado sin tecnicismos)</h1>
+            <div class="article-meta">
+                <span class="meta-item">📅 7 de marzo de 2026</span>
+                <span class="meta-item">⏱️ Lectura: 8 min</span>
+                <span class="meta-item">✍️ IAtoca</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Article Content -->
+    <div class="article-container">
+        <article>
+            <p>
+                Si eres propietario de una PYME española, es probable que hayas escuchado hablar de la inteligencia artificial (IA) en las noticias, en redes sociales, o incluso de boca de tu competencia. Quizás te has preguntado: "¿realmente necesito saber qué es la IA? ¿Va a afectar mi negocio?"
+            </p>
+
+            <p>
+                La respuesta es sí. Y no solo eso, sino que la IA ya está transformando cómo hacen negocios las empresas españolas, sin que muchas de ellas lo sepan siquiera.
+            </p>
+
+            <p>
+                En esta guía práctica, te explicaremos <strong>qué es realmente la inteligencia artificial</strong>, desmentiremos mitos comunes, veremos ejemplos reales de cómo la están usando negocios como el tuyo, y más importante aún: cómo puedes empezar a aprovecharla hoy mismo.
+            </p>
+
+            <h2>Qué es realmente la inteligencia artificial (desmitificando el término)</h2>
+
+            <p>
+                Cuando la mayoría de la gente escucha "inteligencia artificial", piensa en robots humanoides, o en máquinas que pueden hacer todo lo que un humano hace. Eso es Hollywood. La realidad es mucho más simple y, a su vez, más poderosa.
+            </p>
+
+            <p>
+                La inteligencia artificial es, en esencia, un <strong>software capaz de aprender patrones a partir de información</strong> y luego usar esos patrones para tomar decisiones o completar tareas sin que le tengas que programar cada paso manualmente.
+            </p>
+
+            <p>
+                Imagina que tienes un empleado muy dedicado. Durante meses, ese empleado observa cómo clasificas tu correo de proveedores: los correos urgentes aquí, los administrativos allá, los spam en la papelera. Después de observar cientos de ejemplos, ese empleado empieza a hacerlo solo, sin preguntar. Eso es IA.
+            </p>
+
+            <p>
+                La diferencia es que ese "empleado" es un programa que puede procesar millones de ejemplos en segundos, y además mejorar constantemente.
+            </p>
+
+            <div class="highlight">
+                <p>
+                    <strong>En simple:</strong> La IA es tecnología que aprende de ejemplos para automatizar tareas, predecir resultados, y ayudarte a tomar mejores decisiones sin que tengas que programar cada detalle.
+                </p>
+            </div>
+
+            <h2>Tipos de IA que ya usan las empresas españolas</h2>
+
+            <p>
+                La IA no es una única cosa. Hay diferentes aplicaciones y "grados" de inteligencia. Aquí están los que más impacto están teniendo en negocios como el tuyo:
+            </p>
+
+            <h3>1. Chatbots y atención al cliente automatizada</h3>
+
+            <p>
+                Un chatbot es un software que responde preguntas de clientes automáticamente, sin que alguien tenga que estar escribiendo las respuestas. Los buenos chatbots entienden lo que pregunta el cliente y responden de forma coherente.
+            </p>
+
+            <p>
+                Ejemplo: Un restaurante en Madrid instaló un chatbot en su página web que responde preguntas sobre horarios, menú y reservas. Ahora, el 70% de las consultas se resuelven sin que alguien del equipo tenga que intervenir, y los clientes obtienen respuestas en segundos a cualquier hora.
+            </p>
+
+            <h3>2. Automatización de procesos repetitivos</h3>
+
+            <p>
+                Hay miles de tareas en tu negocio que son repetitivas: facturas que procesar, datos que copiar de un sistema a otro, informes que generar cada mes. La IA puede automatizar muchas de estas tareas.
+            </p>
+
+            <p>
+                Ejemplo: Una gestoría en Barcelona usa IA para leer automáticamente documentos de clientes, extraer los datos relevantes, y crear registros en el sistema sin que un empleado tenga que hacerlo manualmente. Esto ha ahorrado más de 10 horas semanales.
+            </p>
+
+            <h3>3. Análisis de datos e insights</h3>
+
+            <p>
+                Tienes datos: cuáles son tus productos más vendidos, qué clientes gastan más, cuándo es la mejor época del año. Pero a menudo, esos datos están desperdigados en diferentes sistemas y es difícil sacar conclusiones útiles. La IA puede analizar todos esos datos en segundos y decirte qué está pasando.
+            </p>
+
+            <p>
+                Ejemplo: Una tienda de ropa online utiliza IA para analizar las compras de sus clientes. El sistema detecta que los clientes que compran pantalones grises tienen un 40% más de probabilidad de comprar camisetas negras. Así que ahora la tienda recomienda esas camisetas a los clientes apropiados, incrementando ventas sin hacer más marketing.
+            </p>
+
+            <h3>4. Generación de contenido</h3>
+
+            <p>
+                Las herramientas como ChatGPT pueden escribir textos, emails, descripciones de productos, y mucho más. No es perfecto, pero puede ahorrar horas de trabajo si sabes cómo usarlas.
+            </p>
+
+            <p>
+                Ejemplo: Una clínica dental usa IA para escribir los borradores de sus posts de blog sobre salud dental. Un empleado los revisa y ajusta, pero ahorra 80% del tiempo que antes empleaba escribiendo desde cero.
+            </p>
+
+            <h2>Ejemplos reales de IA en PYMEs españolas</h2>
+
+            <p>
+                No son casos inventados. Aquí están cosas que ya están pasando en negocios españoles parecidos al tuyo:
+            </p>
+
+            <ul>
+                <li><strong>Restaurante de Madrid:</strong> Usa IA para predecir cuántos clientes vendrán cada día, para así preparar la cantidad correcta de comida y reducir desperdicios.</li>
+                <li><strong>Tienda de zapatos en Sevilla:</strong> Implementó un chatbot que responde a preguntas sobre disponibilidad de tallas y colores. Ahora recibe 50 mensajes menos por WhatsApp al día.</li>
+                <li><strong>Gestoría en Valencia:</strong> Usa IA para clasificar automáticamente facturas de proveedores. Ahora el proceso que tomaba 2 horas, toma 15 minutos.</li>
+                <li><strong>Clínica privada en Bilbao:</strong> Implementó un sistema que analiza datos de pacientes para predecir quiénes no asistirán a su cita. Ahora puede overbooking de forma inteligente.</li>
+                <li><strong>E-commerce en Barcelona:</strong> Usa IA para detectar fraude. Esto ha reducido pérdidas por fraude en un 60%.</li>
+            </ul>
+
+            <h2>Qué NO es IA (aclarando confusiones comunes)</h2>
+
+            <p>
+                Para saber si la IA puede ayudarte, es importante entender qué no es IA. Hay muchas empresas que dicen usar "IA" cuando en realidad están usando cosas mucho más básicas.
+            </p>
+
+            <h3>No es IA...</h3>
+
+            <ul>
+                <li><strong>Un script que ejecuta siempre la misma acción.</strong> Si un programa simplemente dice "si el correo contiene X palabras, mándalo a la carpeta Y", eso no es IA, es una regla programada.</li>
+                <li><strong>Un motor de búsqueda.</strong> Google puede encontrar información, pero no está "aprendiendo" de tus búsquedas (al menos no en el sentido que la IA lo hace).</li>
+                <li><strong>Automatización simple.</strong> Si usas Zapier para enviar un email automático cuando alguien se registra, eso es automatización, no IA.</li>
+                <li><strong>Análisis de datos básico.</strong> Una hoja de cálculo que suma números y hace gráficos no es IA.</li>
+            </ul>
+
+            <div class="highlight">
+                <p>
+                    <strong>Regla de oro:</strong> Si la máquina está aprendiendo de patrones en los datos y mejorando con el tiempo, es IA. Si está ejecutando órdenes programadas siempre de la misma forma, es automatización.
+                </p>
+            </div>
+
+            <h2>Por qué las PYMEs españolas necesitan IA ahora (no mañana)</h2>
+
+            <p>
+                Es posible que pienses: "Bueno, sí, la IA suena interesante, pero mi negocio está yendo bien sin ella. ¿Por qué prisa?" Hay razones importantes:
+            </p>
+
+            <h3>1. Tu competencia ya la está usando</h3>
+
+            <p>
+                No necesariamente la competencia "importante", pero sí algunos competidores menores están mejorando su eficiencia gracias a IA. Con el tiempo, eso se traduce en mejores precios, mejor servicio, o más innovación. Si esperas demasiado, irás por detrás.
+            </p>
+
+            <h3>2. El talento es cada vez más caro</h3>
+
+            <p>
+                En España hay cada vez menos desempleo. Contratar empleados es más caro y más difícil. La IA te permite hacer más con el mismo equipo, reduciendo costos de personal.
+            </p>
+
+            <h3>3. La tecnología está más accesible que nunca</h3>
+
+            <p>
+                Hace 5 años, implementar IA en una PYME era caro y complicado. Hoy, existen herramientas de IA asequibles que no requieren que seas una empresa tecnológica para usarlas. Es el momento.
+            </p>
+
+            <h3>4. Mejor experiencia de cliente = más ventas</h3>
+
+            <p>
+                Un cliente que obtiene respuesta a sus preguntas en segundos via chatbot es un cliente más feliz. Un cliente que recibe recomendaciones personalizadas es más probable que compre. Eso impacta directamente tus ingresos.
+            </p>
+
+            <h2>Cómo empezar (sin abrumarte)</h2>
+
+            <p>
+                Si estás pensando "de acuerdo, pero ¿por dónde empiezo?", la respuesta no es: "contrata una consultora de IA por 50.000 euros". La respuesta es empezar pequeño.
+            </p>
+
+            <p>
+                Te recomendamos que sigas estos pasos:
+            </p>
+
+            <ol>
+                <li><strong>Identifica la tarea más repetitiva de tu negocio.</strong> ¿Cuál es la que más tiempo consume? ¿La que menos valor añade?</li>
+                <li><strong>Busca una herramienta de IA lista para usar.</strong> No necesitas desarrollar nada personalizado. Hay herramientas genéricas que funcionan..</li>
+                <li><strong>Prueba con un piloto.</strong> Antes de implementar en toda la empresa, prueba con un pequeño equipo durante un mes.</li>
+                <li><strong>Mide resultados.</strong> ¿Se ahorró tiempo? ¿Se mejoró la calidad? ¿Qué mejoró y qué no?</li>
+                <li><strong>Escala si funciona.</strong> Si los resultados son buenos, expande a otras áreas del negocio.</li>
+            </ol>
+
+            <p>
+                Para una guía más detallada sobre cómo implementar IA paso a paso en tu PYME, <a href="/blog/como-implementar-ia-en-pyme-paso-a-paso">lee nuestro artículo específico aquí</a>.
+            </p>
+
+            <p>
+                También hemos compilado <a href="/blog/herramientas-ia-para-empresas-2026">un listado de las mejores herramientas de IA para empresas en 2026</a>, categorizadas por tipo de negocio y presupuesto.
+            </p>
+
+            <h2>Conclusión: La IA no es el futuro, es el presente</h2>
+
+            <p>
+                La inteligencia artificial no es ciencia ficción. Es una herramienta práctica que está transformando negocios españoles ahora mismo, desde restaurantes hasta gestorías, desde tiendas online hasta clínicas.
+            </p>
+
+            <p>
+                No necesitas ser un "tech-savvy" para usar IA. Necesitas entender qué es, qué puede hacer por tu negocio, y tener la voluntad de experimentar. El costo de esperar es mayor que el riesgo de empezar.
+            </p>
+
+            <p>
+                Si quieres ayuda para identificar dónde la IA puede impactar tu negocio específico, estamos aquí. En IAtoca ayudamos a PYMEs españolas a implementar IA de forma práctica, sin complicaciones, y sin gastar más de lo necesario.
+            </p>
+        </article>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="cta-section">
+        <h3>¿Listo para impulsar tu negocio con IA?</h3>
+        <p>Déjanos ayudarte a identificar dónde la inteligencia artificial puede transformar tu PYME. Una consulta inicial es gratis.</p>
+        <a href="/#contacto" class="cta-button">Contacta con nosotros</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Sobre IAtoca</h4>
+                <p style="color: var(--gray-2); font-size: 0.95rem; margin-bottom: 1rem;">Consultoría de IA para PYMEs españolas. Ayudamos a empresas a implementar inteligencia artificial de forma práctica, accesible y rentable.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/#servicios">Servicios</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Blog</h4>
+                <ul>
+                    <li><a href="/blog/que-es-inteligencia-artificial-para-empresas/">Qué es IA para empresas</a></li>
+                    <li><a href="/blog/como-implementar-ia-en-pyme-paso-a-paso/">Implementar IA paso a paso</a></li>
+                    <li><a href="/blog/herramientas-ia-para-empresas-2026/">Herramientas de IA 2026</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="/privacy/">Política de privacidad</a></li>
+                    <li><a href="/terms/">Términos de servicio</a></li>
+                    <li><a href="/cookies/">Política de cookies</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 IAtoca. Todos los derechos reservados. | IA para PYMEs españolas.</p>
+        </div>
+    </footer>
+</body>
+</html>
