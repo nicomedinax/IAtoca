@@ -937,13 +937,37 @@
     </footer>
 
     <script>
-        function handleSubmit(e) {
+        async function handleSubmit(e) {
             e.preventDefault();
             var form = e.target;
-            form.style.display = 'none';
-            var success = document.getElementById('formSuccess');
-            success.style.display = 'block';
-            success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            var btn = form.querySelector('button[type="submit"]');
+            var originalText = btn.textContent;
+            btn.textContent = 'Enviando...';
+            btn.disabled = true;
+
+            var data = {
+                nombre: form.nombre.value,
+                email: form.email.value,
+                empresa: form.empresa.value,
+                mensaje: form.mensaje.value
+            };
+
+            try {
+                await fetch('https://script.google.com/macros/s/AKfycbzUIv1azGijs3gsuzxmJbiNhcfyYQJVPUncg4xX1JPazQ-hQ3FuzMlvePUyN5nxvF7a/exec', {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                form.style.display = 'none';
+                var success = document.getElementById('formSuccess');
+                success.style.display = 'block';
+                success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } catch (err) {
+                btn.textContent = originalText;
+                btn.disabled = false;
+                alert('Error al enviar. Inténtalo de nuevo o escríbenos a hola@iatoca.com');
+            }
         }
     </script>
 
