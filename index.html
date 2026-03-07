@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IAtoca — Impulsa tu negocio con Inteligencia Artificial</title>
+    <meta name="description" content="Ayudamos a PYMEs a ganar productividad y rentabilidad implementando Inteligencia Artificial en sus procesos. Sin complicaciones.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6C3CE1;
+            --primary-light: #8B5CF6;
+            --primary-dark: #5228CC;
+            --accent: #00D4AA;
+            --accent-dark: #00B894;
+            --dark: #0F0F1A;
+            --dark-2: #1A1A2E;
+            --dark-3: #25253D;
+            --gray-1: #8888A0;
+            --gray-2: #B0B0C8;
+            --white: #FFFFFF;
+            --off-white: #F0F0F8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--dark);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ===== NAV ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1rem 2rem;
+            backdrop-filter: blur(20px);
+            background: rgba(15, 15, 26, 0.85);
+            border-bottom: 1px solid rgba(108, 60, 225, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        nav .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span:first-child {
+            color: var(--accent);
+        }
+
+        .logo span:last-child {
+            color: var(--white);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--gray-2);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+        }
+
+        .nav-cta {
+            background: var(--primary);
+            color: var(--white) !important;
+            padding: 0.6rem 1.4rem;
+            border-radius: 8px;
+            transition: background 0.2s, transform 0.2s !important;
+        }
+
+        .nav-cta:hover {
+            background: var(--primary-light) !important;
+            transform: translateY(-1px);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 50% 50%, rgba(108, 60, 225, 0.12) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 1; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: rgba(108, 60, 225, 0.15);
+            border: 1px solid rgba(108, 60, 225, 0.3);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--primary-light);
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1.5px;
+        }
+
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, var(--accent), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--gray-2);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(108, 60, 225, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(108, 60, 225, 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* ===== STATS ===== */
+        .stats {
+            padding: 4rem 2rem;
+            background: var(--dark-2);
+        }
+
+        .stats-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat h3 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--accent), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat p {
+            color: var(--gray-2);
+            font-size: 0.95rem;
+            margin-top: 0.3rem;
+        }
+
+        /* ===== SECTIONS GENERAL ===== */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .section-header p {
+            color: var(--gray-2);
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        /* ===== CÓMO FUNCIONA ===== */
+        .how-it-works {
+            background: var(--dark);
+        }
+
+        .steps {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        .step-content h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content p {
+            color: var(--gray-2);
+            line-height: 1.7;
+        }
+
+        /* ===== SERVICIOS ===== */
+        .services {
+            background: var(--dark-2);
+        }
+
+        .services-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: var(--dark-3);
+            border-radius: 20px;
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            border-color: rgba(108, 60, 225, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+
+        .service-card p {
+            color: var(--gray-2);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .service-tag {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.3rem 0.8rem;
+            background: rgba(0, 212, 170, 0.1);
+            color: var(--accent);
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* ===== BENEFICIOS ===== */
+        .benefits {
+            background: var(--dark);
+        }
+
+        .benefits-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .benefit {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .benefit-icon {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 212, 170, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .benefit h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .benefit p {
+            color: var(--gray-2);
+            font-size: 0.9rem;
+        }
+
+        /* ===== CASOS DE ESTUDIO (placeholder) ===== */
+        .cases {
+            background: var(--dark-2);
+        }
+
+        .cases-placeholder {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 4rem 2rem;
+            background: var(--dark-3);
+            border-radius: 20px;
+            border: 1px dashed rgba(108, 60, 225, 0.3);
+        }
+
+        .cases-placeholder h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .cases-placeholder p {
+            color: var(--gray-1);
+            font-size: 1rem;
+        }
+
+        /* ===== FAQ ===== */
+        .faq {
+            background: var(--dark);
+        }
+
+        .faq-list {
+            max-width: 750px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .faq-item {
+            background: var(--dark-2);
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.3rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.2s;
+        }
+
+        .faq-question:hover {
+            color: var(--accent);
+        }
+
+        .faq-question .arrow {
+            transition: transform 0.3s;
+            font-size: 0.8rem;
+        }
+
+        .faq-item.active .arrow {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding: 0 1.5rem 1.3rem;
+        }
+
+        .faq-answer p {
+            color: var(--gray-2);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* ===== CTA ===== */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-dark), var(--dark-2));
+            text-align: center;
+            padding: 6rem 2rem;
+        }
+
+        .cta-section h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .cta-section p {
+            color: var(--gray-2);
+            font-size: 1.1rem;
+            max-width: 550px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ===== CONTACT FORM ===== */
+        .contact-form {
+            max-width: 500px;
+            margin: 2rem auto 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: var(--gray-1);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--primary-light);
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+            background: rgba(0, 212, 170, 0.1);
+            border-radius: 14px;
+            border: 1px solid rgba(0, 212, 170, 0.2);
+            max-width: 500px;
+            margin: 2rem auto 0;
+        }
+
+        .form-success h3 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-success p {
+            color: var(--gray-2);
+            font-size: 0.95rem;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--dark);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer .logo {
+            margin-bottom: 1rem;
+        }
+
+        footer p {
+            color: var(--gray-1);
+            font-size: 0.85rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--dark-2);
+                flex-direction: column;
+                padding: 1.5rem;
+                gap: 1rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .stats-inner {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .step {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="nav-inner">
+            <div class="logo"><span>IA</span><span>toca</span></div>
+            <ul class="nav-links">
+                <li><a href="#como-funciona">Cómo funciona</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#beneficios">Beneficios</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contacto" class="nav-cta">Hablemos →</a></li>
+            </ul>
+            <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">🤖 Inteligencia Artificial para tu negocio</div>
+            <h1>Tu empresa necesita IA.<br><span class="highlight">Y la necesita ya.</span></h1>
+            <p>Analizamos los procesos de tu negocio y te proponemos soluciones con Inteligencia Artificial que te ahorran tiempo, reducen costes y aumentan tu rentabilidad.</p>
+            <div class="hero-buttons">
+                <a href="#contacto" class="btn btn-primary">Quiero saber más →</a>
+                <a href="#como-funciona" class="btn btn-secondary">¿Cómo funciona?</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <div class="stats">
+        <div class="stats-inner">
+            <div class="stat">
+                <h3>72%</h3>
+                <p>de PYMEs aún no usan IA en sus procesos</p>
+            </div>
+            <div class="stat">
+                <h3>10-40h</h3>
+                <p>ahorradas al mes de media por empresa</p>
+            </div>
+            <div class="stat">
+                <h3>3-10x</h3>
+                <p>retorno de inversión en el primer trimestre</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CÓMO FUNCIONA -->
+    <section class="how-it-works" id="como-funciona">
+        <div class="section-header">
+            <h2>Así de simple</h2>
+            <p>No necesitas saber nada de IA. Solo cuéntanos qué te quita el sueño en tu negocio y nosotros proponemos la solución.</p>
+        </div>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3>Nos cuentas tu negocio</h3>
+                    <p>Hacemos una llamada o reunión donde nos explicas cómo funciona tu empresa, qué procesos te consumen más tiempo y dónde ves oportunidades. Sin compromiso.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3>Diseñamos tu plan de IA</h3>
+                    <p>Identificamos exactamente qué procesos puedes automatizar o mejorar con IA. Te presentamos una propuesta clara con tiempos, costes y resultados esperados.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3>Lo implementamos por ti</h3>
+                    <p>Nos encargamos de todo. Configuramos las herramientas, automatizamos los procesos y te formamos para que tu equipo sea autosuficiente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section class="services" id="servicios">
+        <div class="section-header">
+            <h2>Lo que podemos hacer por ti</h2>
+            <p>Cada negocio es diferente. Por eso adaptamos las soluciones de IA a lo que realmente necesitas.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🔍</div>
+                <h3>Auditoría de Procesos + Plan de IA</h3>
+                <p>Analizamos tu empresa de arriba a abajo y te entregamos un informe con las oportunidades concretas donde la IA puede impactar tu negocio.</p>
+                <span class="service-tag">Ideal para empezar</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">⚡</div>
+                <h3>Automatización de Tareas Repetitivas</h3>
+                <p>Facturación, emails, reporting, gestión de datos, seguimiento de clientes... todo lo que haces a mano y podrías dejar de hacer.</p>
+                <span class="service-tag">Ahorro inmediato</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🤖</div>
+                <h3>Asistentes Inteligentes a Medida</h3>
+                <p>Chatbots para atención al cliente, copilots para tu equipo de ventas, asistentes internos que responden preguntas sobre tu empresa 24/7.</p>
+                <span class="service-tag">Escalabilidad</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Análisis de Datos con IA</h3>
+                <p>Convierte tus datos en decisiones. Dashboards automáticos, informes inteligentes y predicciones basadas en el historial de tu negocio.</p>
+                <span class="service-tag">Decisiones informadas</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✍️</div>
+                <h3>Contenido y Marketing Automatizado</h3>
+                <p>Generación de posts, newsletters, propuestas comerciales, descripciones de producto... contenido profesional en una fracción del tiempo.</p>
+                <span class="service-tag">Más impacto, menos horas</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📋</div>
+                <h3>Gestión Documental Inteligente</h3>
+                <p>Organización automática de documentos, extracción de datos de facturas y contratos, generación de informes y plantillas con IA.</p>
+                <span class="service-tag">Adiós al papeleo</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFICIOS -->
+    <section class="benefits" id="beneficios">
+        <div class="section-header">
+            <h2>¿Por qué ahora?</h2>
+            <p>Las empresas que integran IA hoy tendrán una ventaja competitiva imposible de alcanzar mañana.</p>
+        </div>
+        <div class="benefits-grid">
+            <div class="benefit">
+                <div class="benefit-icon">⏰</div>
+                <div>
+                    <h3>Recupera tu tiempo</h3>
+                    <p>Deja de perder horas en tareas que una máquina hace mejor y más rápido.</p>
+                </div>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">💰</div>
+                <div>
+                    <h3>Reduce costes operativos</h3>
+                    <p>Automatiza procesos y necesita menos recursos para hacer más.</p>
+                </div>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">📈</div>
+                <div>
+                    <h3>Escala sin contratar</h3>
+                    <p>La IA te permite crecer sin multiplicar tu equipo proporcionalmente.</p>
+                </div>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">🎯</div>
+                <div>
+                    <h3>Decisiones más inteligentes</h3>
+                    <p>Basa tus decisiones en datos, no en intuición. La IA analiza lo que tú no puedes.</p>
+                </div>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">🏆</div>
+                <div>
+                    <h3>Ventaja competitiva</h3>
+                    <p>Mientras tu competencia sigue haciendo las cosas a mano, tú ya estarás un paso por delante.</p>
+                </div>
+            </div>
+            <div class="benefit">
+                <div class="benefit-icon">🔒</div>
+                <div>
+                    <h3>Sin riesgo</h3>
+                    <p>Empezamos con un diagnóstico. Si no ves valor, no sigues. Así de fácil.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CASOS DE ESTUDIO -->
+    <section class="cases" id="casos">
+        <div class="section-header">
+            <h2>Resultados reales</h2>
+            <p>Casos de empresas que ya han dado el salto.</p>
+        </div>
+        <div class="cases-placeholder">
+            <h3>🚀 Próximamente</h3>
+            <p>Estamos trabajando con nuestros primeros clientes. Aquí verás sus resultados reales con datos concretos.</p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" id="faq">
+        <div class="section-header">
+            <h2>Preguntas frecuentes</h2>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                    <span>¿Necesito saber algo de IA para trabajar con vosotros?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>No. Absolutamente nada. Tú nos cuentas cómo funciona tu negocio y nosotros nos encargamos de todo lo técnico. Te explicamos todo en un lenguaje que entiendas.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                    <span>¿Cuánto cuesta?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Depende del proyecto. La auditoría inicial tiene un precio fijo y a partir de ahí te presupuestamos según lo que necesites. Sin sorpresas ni letra pequeña.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                    <span>¿Cuánto tiempo tarda en implementarse?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Las automatizaciones simples pueden estar listas en 1-2 semanas. Proyectos más complejos, entre 4-8 semanas. Te damos un timeline claro desde el primer día.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                    <span>¿Es seguro? ¿Mis datos están protegidos?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Sí. Trabajamos con herramientas que cumplen con la normativa europea de protección de datos (RGPD). La seguridad de tu información es nuestra prioridad.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                    <span>¿Y si no funciona para mi negocio?</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Por eso empezamos con una auditoría. Si después del análisis no vemos oportunidades claras, te lo decimos honestamente. No vendemos humo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL / CONTACTO -->
+    <section class="cta-section" id="contacto">
+        <h2>¿Listo para dar el salto?</h2>
+        <p>Cuéntanos tu caso. Sin compromiso, sin jerga técnica, sin presión. Solo una conversación para ver cómo la IA puede ayudarte.</p>
+        <form class="contact-form" onsubmit="handleSubmit(event)">
+            <input type="text" name="nombre" placeholder="Tu nombre" required>
+            <input type="email" name="email" placeholder="Tu email" required>
+            <input type="text" name="empresa" placeholder="Nombre de tu empresa (opcional)">
+            <textarea name="mensaje" placeholder="Cuéntanos brevemente qué procesos te gustaría mejorar..." rows="4" required></textarea>
+            <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">Enviar mensaje →</button>
+        </form>
+        <div class="form-success" id="formSuccess">
+            <h3>✅ Mensaje enviado</h3>
+            <p>Hemos recibido tu mensaje. Te responderemos en menos de 24 horas.</p>
+        </div>
+        <p style="margin-top: 1.5rem; font-size: 0.9rem;">O si lo prefieres: <a href="mailto:hola@iatoca.es" style="color: var(--accent); text-decoration: none; font-weight: 600;">hola@iatoca.es</a></p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="logo"><span>IA</span><span>toca</span></div>
+        <p style="margin-top: 0.8rem;">© 2026 IAtoca. Impulsa tu negocio con Inteligencia Artificial.</p>
+    </footer>
+
+    <script>
+        function handleSubmit(e) {
+            e.preventDefault();
+            var form = e.target;
+            form.style.display = 'none';
+            var success = document.getElementById('formSuccess');
+            success.style.display = 'block';
+            success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    </script>
+
+</body>
+</html>
