@@ -1,3 +1,17 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+
+# Sitemap
 Sitemap: https://www.iatoca.com/sitemap.xml
+
+# Crawl-delay (be respectful)
+Crawl-delay: 1
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
