@@ -1181,12 +1181,12 @@
             };
 
             try {
-                await fetch('https://script.google.com/macros/s/AKfycbzUIv1azGijs3gsuzxmJbiNhcfyYQJVPUncg4xX1JPazQ-hQ3FuzMlvePUyN5nxvF7a/exec', {
+                var response = await fetch('/api/contact', {
                     method: 'POST',
-                    mode: 'no-cors',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
                 });
+                if (!response.ok) throw new Error('Error del servidor');
                 form.style.display = 'none';
                 var success = document.getElementById('formSuccess');
                 success.style.display = 'block';
